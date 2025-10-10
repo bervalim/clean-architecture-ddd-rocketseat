@@ -4,6 +4,7 @@ import { InMemoryQuestionRepository } from 'test/repositories/in-memory-question
 
 let inMemoryQuestionRepository: InMemoryQuestionRepository
 let sut: CreateQuestiosUseCase
+
 describe('Create Question', () => {
     beforeEach(() => {
         inMemoryQuestionRepository = new InMemoryQuestionRepository()
