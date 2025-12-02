@@ -17,6 +17,6 @@ export class FetchQuestionCommentsUseCase{
     async execute({questionId, page }: FetchQuestionCommentsUseCaseRequest): Promise<FetchQuestionCommentsUseCaseResponse> {
         const questionComments = await this.questionCommentsRepository.findManyByQuestionId(questionId, { page })
 
-        return right({questionComments})
+        return right({ questionComments })
     }
 } 

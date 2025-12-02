@@ -44,7 +44,5 @@ describe('Delete Answer Comment', () => {
     
     expect(result.isLeft()).toBe(true)
     expect(result.value).toBeInstanceOf(NotAllowedError)
-
-    
   })
 })
