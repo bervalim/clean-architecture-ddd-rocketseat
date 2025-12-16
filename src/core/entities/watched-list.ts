@@ -11,6 +11,8 @@ export abstract class WatchedList<T> {
     this.removed = []
   }
 
+  // Método sem implementação
+  // Classe filha é obrigada a implementar
   abstract compareItems(a: T, b: T): boolean
 
   public getItems(): T[] {

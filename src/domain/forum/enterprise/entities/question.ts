@@ -4,7 +4,6 @@ import { Optional } from "@/core/types/optional"
 import dayjs from "dayjs"
 import { Slug } from "./value-objects/slug"
 import { AggregateRoot } from "@/core/entities/aggregate-root"
-import { QuestionAttachment } from "./question-attachment"
 import { QuestionAttachmentList } from "./question-attachment-list"
 
 export interface QuestionProps {
@@ -82,6 +81,7 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   set attachments(attachments: QuestionAttachmentList) {
     this.props.attachments = attachments;
+    this.touch()
   }
 
 

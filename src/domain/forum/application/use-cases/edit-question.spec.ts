@@ -14,8 +14,8 @@ let sut: EditQuestionUseCase;
 
 describe('Edit Question', () => {
   beforeEach(() => {
-    inMemoryQuestionRepository = new InMemoryQuestionRepository();
     inMemoryQuestionAttachmentRepository = new InMemoryQuestionAttachmentRepository();
+    inMemoryQuestionRepository = new InMemoryQuestionRepository(inMemoryQuestionAttachmentRepository);
     sut = new EditQuestionUseCase(inMemoryQuestionRepository, inMemoryQuestionAttachmentRepository);
   });
 
@@ -27,16 +27,17 @@ describe('Edit Question', () => {
     // Pré-popluando o repo fazendo como s ea pergunta fosse previamente criada com dois anexos
 
     await inMemoryQuestionRepository.create(newQuestion);
-      inMemoryQuestionAttachmentRepository.items.push(
-        makeQuestionAttachment({
-          questionId: newQuestion.id,
-          attachmentId: new UniqueEntityId('1')
-        }),
-        makeQuestionAttachment({
-          questionId: newQuestion.id,
-          attachmentId: new UniqueEntityId('2')
-        }),
-    )
+    
+    inMemoryQuestionAttachmentRepository.items.push(
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityId('1')
+      }),
+      makeQuestionAttachment({
+        questionId: newQuestion.id,
+        attachmentId: new UniqueEntityId('2')
+      }),
+  )
 
     await sut.execute({
       authorId: 'author-1',
