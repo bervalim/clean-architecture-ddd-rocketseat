@@ -1,14 +1,13 @@
 import { expect, describe, it, beforeEach } from 'vitest';
 import { InMemoryAnswerRepository } from 'test/repositories/in-memory-answers-repository';
-import { DeleteAnswerUseCase } from './delete-answer';
 import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import { makeAnswer } from 'test/factories/make-answer';
 import { InMemoryQuestionRepository } from 'test/repositories/in-memory-questions-repository';
 import { ChooseQuestionBestAnswerUseCase } from './choose-question-best-answer';
 import { makeQuestion } from 'test/factories/make-question';
-import { NotAllowedError } from './errors/not-allowed-error';
 import { InMemoryAnswerAttachmentRepository } from 'test/repositories/in-memory-answer-attachments-repository';
 import { InMemoryQuestionAttachmentRepository } from 'test/repositories/in-memory-question-attachments-repository';
+import { NotAllowedError } from '@/core/errors/errors/not-allowed-error';
 
 let inMemoryQuestionRepository: InMemoryQuestionRepository;
 let inMemoryAnswerRepository: InMemoryAnswerRepository;

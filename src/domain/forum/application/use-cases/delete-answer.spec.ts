@@ -3,9 +3,9 @@ import { InMemoryAnswerRepository } from 'test/repositories/in-memory-answers-re
 import { DeleteAnswerUseCase } from './delete-answer';
 import { UniqueEntityId } from '@/core/entities/unique-entity-id';
 import { makeAnswer } from 'test/factories/make-answer';
-import { NotAllowedError } from './errors/not-allowed-error';
 import { makeAnswerAttachment } from 'test/factories/make-answer-attachment';
 import { InMemoryAnswerAttachmentRepository } from 'test/repositories/in-memory-answer-attachments-repository';
+import { NotAllowedError } from '@/core/errors/errors/not-allowed-error';
 
 let inMemoryAnswerRepository: InMemoryAnswerRepository;
 let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentRepository

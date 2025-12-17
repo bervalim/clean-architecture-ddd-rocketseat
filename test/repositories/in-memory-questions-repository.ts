@@ -48,9 +48,8 @@ export class InMemoryQuestionRepository implements QuestionRepository {
         if (index !== -1) {
             this.items.splice(index, 1);
         }
-        console.log('index',index)
 
-         this.questionAttachmentsRepository.deleteManyByQuestionId(question.id.toString())
+        this.questionAttachmentsRepository.deleteManyByQuestionId(question.id.toString())
     }
 
      async save(question: Question) {
