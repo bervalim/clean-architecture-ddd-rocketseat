@@ -2,7 +2,7 @@ import { Either, left, right } from "@/core/either";
 import { Answer } from "../../enterprise/entities/answer";
 import { AnswerRepository } from "../repositories/answer-repository";
 import { AnswerAttachmentRepository } from "../repositories/answer-attachments-repository";
-import { AnswerAttachmentList } from "../../enterprise/entities/answer-attachements";
+import { AnswerAttachmentList } from "../../enterprise/entities/answer-attachements-list";
 import { AnswerAttachment } from "../../enterprise/entities/answer-attachment";
 import { UniqueEntityId } from "@/core/entities/unique-entity-id";
 import { NotAllowedError } from "@/core/errors/errors/not-allowed-error";
